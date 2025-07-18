@@ -79,7 +79,7 @@ p{
     <div class='container2'>
         <p class="ans1">공백 포함: </p>
         <p class="ans2">공백 제외: </p>
-        <p class="ans3">공백 제외: </p>
+        <p class="ans3">단어 수: </p>
     </div>
 
     <script>
@@ -92,10 +92,11 @@ p{
         textarea.addEventListener('input', () => {
             const text=textarea.value;
             let text2=text.replace(/\s/g,'');
-            let text3=text.replace(/\s/g,'').replaceAll('.','').replaceAll(',','').replaceAll('*','');
+            let text3=text.split(' ').filter(el => el !== '');
+            
             ans1.textContent = `공백 포함: ${text.length}`;
             ans2.textContent = `공백 제외: ${text2.length}`;
-            ans3.textContent = `공백, 특수문자 제외: ${text3.length}`;
+            ans3.textContent = `단어 수: ${text3.length}`;
         })
     </script>
 </body>
