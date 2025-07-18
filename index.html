@@ -93,7 +93,7 @@ p{
             const text=textarea.value;
             let text2=text.replace(/\s/g,'');
             let text3=text.split(' ').filter(el => el !== '');
-            
+
             ans1.textContent = `공백 포함: ${text.length}`;
             ans2.textContent = `공백 제외: ${text2.length}`;
             ans3.textContent = `단어 수: ${text3.length}`;
